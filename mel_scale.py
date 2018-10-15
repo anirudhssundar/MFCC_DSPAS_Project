@@ -43,3 +43,5 @@ def filterbanks(filepath,power_spectrum):
     filter_banks = np.dot(power_spectrum, fbank.T)
     filter_banks = np.where(filter_banks == 0, np.finfo(float).eps, filter_banks)  # Numerical Stability
     filter_banks = 20 * np.log10(filter_banks)  # dB
+    
+    return filter_banks
